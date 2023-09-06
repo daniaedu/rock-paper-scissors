@@ -1,8 +1,14 @@
-// Prompts the user to type in their choice
+// Computer and player scores are zero and updated everytime game() is called
 alert("Welcome to an exciting game of Rock Paper Scissors!");
 alert("Think you have what it takes to beat the computer in this 5-round challenge?!");
+let playerScore = 0;
+let computerScore = 0;
 
-let playerChoice = getPlayerChoice();
+game();
+game();
+game();
+game();
+game();
 
 // Function gets player's choice, and if invalid, it runs again until player types in a valid response
 function getPlayerChoice() {
@@ -29,5 +35,47 @@ function getComputerChoice() {
     } 
     else {
         return computerChoice = 'scissors';
+    }
+}
+
+// Function plays a round of Rock Paper Scissors each time it's called and updates score
+function game() {
+    let playerSelection = getPlayerChoice();
+    let computerSelection= getComputerChoice();
+
+    if (playerSelection === computerSelection) {
+        playerScore += 1;
+        computerScore += 1;
+        alert('It is a tie!');
+    }
+    else if (playerSelection === 'rock') {
+        if (computerSelection === 'scissors') {
+            alert(`${playerSelection} beats ${computerSelection}! Player Wins!`);
+            playerScore += 1;
+        }
+        else {
+            alert(`${computerSelection} beats ${playerSelection}! Computer Wins!`);
+            computerScore += 1;
+        }
+    }
+    else if (playerSelection === 'paper') {
+        if (computerSelection === 'rock') {
+            alert(`${playerSelection} beats ${computerSelection}! Player Wins!`);
+            playerScore += 1;
+        }
+        else {
+            alert(`${computerSelection} beats ${playerSelection}! Computer Wins!`);
+            computerScore += 1;
+        }
+    }
+    else {
+        if (computerSelection === 'paper') {
+            alert(`${playerSelection} beats ${computerSelection}! Player Wins!`);
+            playerScore += 1;
+        }
+        else {
+            alert(`${computerSelection} beats ${playerSelection}! Computer Wins!`);
+            computerScore += 1;
+        }
     }
 }
