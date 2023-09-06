@@ -15,5 +15,19 @@ function getPlayerChoice() {
         alert("INVALID CHOICE! Must choose Rock, Paper or Scissors!");
         getPlayerChoice();
     }
-}
+} 
 
+// Function gets computer's choice via Math.random
+function getComputerChoice() {
+    let computerChoice = Math.floor(Math.random() * 3) + 1;
+
+    if (computerChoice === 1) {
+        return computerChoice = 'rock';
+    } 
+    else if (computerChoice === 2) {
+        return computerChoice = 'paper';
+    } 
+    else {
+        return computerChoice = 'scissors';
+    }
+}
