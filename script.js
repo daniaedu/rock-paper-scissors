@@ -10,6 +10,8 @@ game();
 game();
 game();
 
+determineWinner(playerScore, computerScore);
+
 // Function gets player's choice, and if invalid, it runs again until player types in a valid response
 function getPlayerChoice() {
     let playerChoice = prompt("Choose your weapon: Rock, Paper or Scissors?").toLowerCase();
@@ -77,5 +79,18 @@ function game() {
             alert(`${computerSelection} beats ${playerSelection}! Computer Wins!`);
             computerScore += 1;
         }
+    }
+}
+
+function determineWinner(playerScore, computerScore) {
+    if (playerScore === computerScore) {
+        alert(`Player Score: ${playerScore}, Computer Score: ${computerScore}. It's a tie!`);
+    }
+    else if (playerScore > computerScore) {
+        alert(`Player Score: ${playerScore}, Computer Score: ${computerScore}. Player wins!`);
+
+    }
+    else {
+        alert(`Player Score: ${playerScore}, Computer Score: ${computerScore}. Computer wins!`);
     }
 }
