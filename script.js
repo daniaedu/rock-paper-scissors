@@ -21,7 +21,7 @@ function getPlayerChoice() {
         }
     else {
         alert("INVALID CHOICE! Must choose Rock, Paper or Scissors!");
-        getPlayerChoice();
+        return getPlayerChoice();
     }
 } 
 
