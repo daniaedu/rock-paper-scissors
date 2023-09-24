@@ -1,0 +1,53 @@
+/************************************************
+                UNIVERSAL STYLE
+************************************************/
+
+body, button {
+    background-color: rgb(50, 48, 49);
+    color: rgb(127, 121, 121);
+  }
+  
+/************************************************
+                HEADER STYLE
+************************************************/
+
+  h1 {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+  }
+  
+/************************************************
+                SCOREBOARD STYLE
+************************************************/
+
+  div#scoreboard {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+  }
+  
+/************************************************
+                CONTROLS STYLE
+************************************************/
+
+  div#gameControls {
+      display: flex;
+      margin-top: 30px;
+      justify-content: center;
+      gap: 20px;
+  }
+  button {
+      background-color: rgb(61, 59, 60);
+  }
+  
+/************************************************
+                RESULT STYLE
+************************************************/
+
+  div#result {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+  }
+  
