@@ -1,28 +1,19 @@
 // Computer and player scores are zero and updated everytime game() is called
-alert("Welcome to an exciting game of Rock Paper Scissors!");
-alert("Think you have what it takes to beat the computer in this 5-round challenge?!");
+
 let playerScore = 0;
 let computerScore = 0;
 
-game();
-game();
-game();
-game();
-game();
+// Event listeners for Rock, Paper, Scissors button
+const rockButton = document.querySelector('#rock').addEventListener('click', getPlayerChoice);
+const paperButton = document.querySelector('#paper').addEventListener('click', getPlayerChoice);
+const scissorsButton = document.querySelector('#scissors').addEventListener('click', getPlayerChoice);
 
 determineWinner(playerScore, computerScore);
 
-// Function gets player's choice, and if invalid, it runs again until player types in a valid response
-function getPlayerChoice() {
-    let playerChoice = prompt("Choose your weapon: Rock, Paper or Scissors?").toLowerCase();
-
-    if (playerChoice === 'rock' || playerChoice === 'paper' || playerChoice === 'scissors') {
-            return playerChoice;
-        }
-    else {
-        alert("INVALID CHOICE! Must choose Rock, Paper or Scissors!");
-        return getPlayerChoice();
-    }
+// Returns playerChoice based on the button that was clicked and stores button ID name
+function getPlayerChoice(event) {
+    let playerChoice = event.target.id;
+    return playerChoice;
 } 
 
 // Function gets computer's choice via Math.random
