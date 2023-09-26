@@ -2,14 +2,13 @@
 
 let playerScore = 0;
 let computerScore = 0;
+let counter = 0;
 let result = document.querySelector('div#result p');
 
 // Event listeners for Rock, Paper, Scissors button
 const rockButton = document.querySelector('#rock').addEventListener('click', getPlayerChoice);
 const paperButton = document.querySelector('#paper').addEventListener('click', getPlayerChoice);
 const scissorsButton = document.querySelector('#scissors').addEventListener('click', getPlayerChoice);
-
-//determineWinner(playerScore, computerScore);
 
 // Returns playerChoice based on the button that was clicked and stores button ID name
 function getPlayerChoice(event) {
@@ -34,6 +33,15 @@ function getComputerChoice() {
 
 // Function plays a round of Rock Paper Scissors each time it's called and updates score
 function game(playerChoice) {
+    if (counter === 5) {
+        document.querySelector('#rock').disabled = true;
+        document.querySelector('#paper').disabled = true;
+        document.querySelector('#scissors').disabled = true;
+        determineWinner(playerScore, computerScore);
+        return;
+    }
+
+    counter++;
     let playerSelection = playerChoice;
     let computerSelection= getComputerChoice();
 
@@ -85,13 +93,13 @@ function game(playerChoice) {
 
 function determineWinner(playerScore, computerScore) {
     if (playerScore === computerScore) {
-        alert(`Player Score: ${playerScore}, Computer Score: ${computerScore}. It's a tie!`);
+        result.textContent = `Game Over! It's a tie!`;
     }
     else if (playerScore > computerScore) {
-        alert(`Player Score: ${playerScore}, Computer Score: ${computerScore}. Player wins!`);
+        result.textContent = `Game Over! Player wins!`;
 
     }
     else {
-        alert(`Player Score: ${playerScore}, Computer Score: ${computerScore}. Computer wins!`);
+        result.textContent = `Game Over! Computer wins!`;
     }
 }
